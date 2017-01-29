@@ -8,7 +8,8 @@
   var map = {
     'app': 'app', // 'dist',
     '@angular': 'node_modules/@angular',
-    'rxjs': 'node_modules/rxjs'
+    'rxjs': 'node_modules/rxjs',
+    'js-md5 ': 'node_modules/js-md5'
   };
 
   // packages tells the System loader how to load when no filename and/or no extension
