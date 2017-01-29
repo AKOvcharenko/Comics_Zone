@@ -1,3 +1,13 @@
-/**
- * Created by Artem on 1/29/2017.
- */
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'mw-loader',
+    templateUrl: 'app/templates/loader.component.html',
+    styleUrls: ['app/css/loader.component.css']
+})
+
+
+export class LoaderComponent {
+    
+}
+
