@@ -1,0 +1,30 @@
+.image-grid-row{
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.image-grid-row img{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.image-grid-row a{
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'TradeGothicBold';
+    font-size: 19px;
+    color: black;
+    line-height: 20px;
+}
+
+.image-grid-row a:hover{
+    font-size: 21px;
+    transition: 0.1s;
+}
+
+.image-grid-row span{
+    display: block;
+    margin-top: 10px;
+
+}

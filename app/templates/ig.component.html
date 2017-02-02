@@ -1,0 +1,8 @@
+<div class="image-grid-row row" *ngFor="let row of rows">
+    <div class="col-sm-3" *ngFor="let item of row">
+        <a [href]="getLinkHref(item)">
+            <img [src]="getImageSrc(item)">
+            <span class="name">{{getImageCopy(item)}}</span>
+        </a>
+    </div>
+</div>

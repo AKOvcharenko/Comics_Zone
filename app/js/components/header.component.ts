@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataService } from './../services/data.service';
+
 
 @Component({
     selector: 'mw-header',
@@ -8,12 +8,4 @@ import { DataService } from './../services/data.service';
 })
 
 
-export class HeaderComponent {
-
-    constructor(private dataService: DataService){}
-
-    ngOnInit() {
-        this.dataService.getCharacters({}).subscribe(smth => {
-        });
-    }
-}
+export class HeaderComponent {}

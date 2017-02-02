@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './js/components/app.component';
 import { HeaderComponent } from './js/components/header.component';
 import { LoaderComponent } from './js/components/loader.component';
+import { IGPComponent } from './js/components/igp.component';
+import { IGComponent } from './js/components/ig.component';
 import { DataService } from './js/services/data.service';
 
 @NgModule({
@@ -15,7 +17,9 @@ import { DataService } from './js/services/data.service';
     declarations: [
         AppComponent,
         HeaderComponent,
-        LoaderComponent
+        LoaderComponent,
+        IGPComponent,
+        IGComponent
     ],
     providers:[
         DataService
