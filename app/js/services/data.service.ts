@@ -23,9 +23,9 @@ export class DataService {
         }
     }
 
-    private get(url, params) {
+    private get(url, params){
         let searchParams = new URLSearchParams();
-        let commonParams = Object.create(this.createDefaultParams(), params);
+        let commonParams = Object.assign({}, this.createDefaultParams(), params);
         for(let key in commonParams){
             searchParams.append(key, commonParams[key]);
         }
