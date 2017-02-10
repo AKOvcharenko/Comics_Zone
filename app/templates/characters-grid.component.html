@@ -1,0 +1,9 @@
+<div class="characters-row row" *ngFor="let row of rows">
+    <div class="col-sm-3" *ngFor="let item of row">
+        <a [href]="getLinkHref(item)">
+            <span class="character-shadow"></span>
+            <img [src]="getImageSrc(item)">
+            <span class="character-name" [innerHTML]="getImageCopy(item)"></span>
+        </a>
+    </div>
+</div>

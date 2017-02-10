@@ -1,0 +1,9 @@
+<div class="comics-row row" *ngFor="let row of rows">
+    <div class="col-sm-4" *ngFor="let item of row">
+        <a [href]="getLinkHref(item)">
+            <img [src]="getImageSrc(item)">
+            <span class="comic-shadow"></span>
+            <span class="comic-border"></span>
+        </a>
+    </div>
+</div>

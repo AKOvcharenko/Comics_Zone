@@ -1,1 +1,5 @@
-1. how load node module to service file?
+//1. how load node module to service file?
+2. refactor character-grid component into character-grid.service
+3. refactor comics-grid-page component into comics-grid-page.service
+4. refactor comics-grid component into comics-grid.service
+

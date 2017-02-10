@@ -9,13 +9,13 @@
     'app': 'app', // 'dist',
     '@angular': 'node_modules/@angular',
     'rxjs': 'node_modules/rxjs',
-    'js-md5 ': 'node_modules/js-md5'
-  };
+    'ts-md5': 'node_modules/ts-md5'  };
 
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
     'app': { main: 'main.js', defaultExtension: 'js' },
-    'rxjs': { defaultExtension: 'js' }
+    'rxjs': { defaultExtension: 'js' },
+    'ts-md5': {main: '/md5.js', defaultExtension: 'js'}
   };
 
   var ngPackageNames = [
@@ -26,7 +26,7 @@
     'http',
     'platform-browser',
     'platform-browser-dynamic',
-    'router',
+    'router'
   ];
 
   // Individual files (~300 requests):

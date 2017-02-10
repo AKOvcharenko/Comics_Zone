@@ -5,9 +5,12 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './js/components/app.component';
 import { HeaderComponent } from './js/components/header.component';
 import { LoaderComponent } from './js/components/loader.component';
-import { IGPComponent } from './js/components/igp.component';
-import { IGComponent } from './js/components/ig.component';
+import { CGPComponent } from './js/components/characters-grid-page.component';
+import { CGComponent } from './js/components/characters-grid.component';
+import { ComicsGPComponent } from './js/components/comics-grid-page.component';
+import { ComicsGComponent } from './js/components/comics-grid.component';
 import { DataService } from './js/services/data.service';
+
 
 @NgModule({
     imports: [
@@ -18,8 +21,10 @@ import { DataService } from './js/services/data.service';
         AppComponent,
         HeaderComponent,
         LoaderComponent,
-        IGPComponent,
-        IGComponent
+        CGPComponent,
+        CGComponent,
+        ComicsGPComponent,
+        ComicsGComponent
     ],
     providers:[
         DataService

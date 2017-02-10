@@ -4,22 +4,21 @@ import { DOCUMENT } from '@angular/platform-browser';
 
 
 @Component({
-    selector: 'mw-igp',
-    templateUrl: 'app/templates/igp.component.html',
-    styleUrls: ['app/css/igp.component.css']
+    selector: 'mw-charactersgp',
+    templateUrl: 'app/templates/characters-grid-page.component.html',
+    styleUrls: ['app/css/characters-grid-page.component.css']
 })
 
-export class IGPComponent{
-
+export class CGPComponent{
 
     grids = [];
+    requestPending = false;
+
 
     constructor(
         private dataService: DataService,
         @Inject(DOCUMENT) private document: Document
     ){}
-
-    requestPending = false;
 
     getGrids(){
         !this.requestPending && this.request();
@@ -42,7 +41,7 @@ export class IGPComponent{
 
     @HostListener("window:scroll", [])
     scrollHandler(){
-        var scrollTop = window.scrollY || this.document.documentElement.scrollTop;
+        var scrollTop = (window.scrollY || this.document.documentElement.scrollTop) + 10; // user almost scrolled down
         if ((window.innerHeight + scrollTop) >= this.document.body.offsetHeight) {
             this.getGrids();
         }

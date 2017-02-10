@@ -2,13 +2,13 @@ import { Component, Input } from '@angular/core';
 
 
 @Component({
-    selector: 'mw-image-grid',
-    templateUrl: 'app/templates/ig.component.html',
-    styleUrls: ['app/css/ig.component.css']
+    selector: 'mw-charactersg',
+    templateUrl: 'app/templates/characters-grid.component.html',
+    styleUrls: ['app/css/characters-grid.component.css']
 })
 
 
-export class IGComponent{
+export class CGComponent{
     @Input() grid;
 
     rows = [];

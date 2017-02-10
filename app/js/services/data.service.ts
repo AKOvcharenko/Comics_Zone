@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { Http, URLSearchParams } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { keys } from './../../details';
-import {hex} from './../../../node_modules/js-md5/build/md5.min.js';
+import { Md5 } from 'ts-md5/dist/md5';
+
+
 
 @Injectable()
 export class DataService {
@@ -15,11 +17,12 @@ export class DataService {
     private createDefaultParams(){
         var ts = this.getRandomInt(0, 100000);
         var hash = ts + keys.privateKey + keys.publicKey;
-        hash = hex(hash);
+        var md5Hash;
+        md5Hash = Md5.hashStr(hash);
         return {
             ts:ts,
             apikey: keys.publicKey,
-            hash: hash
+            hash: md5Hash
         }
     }
 
@@ -27,8 +30,11 @@ export class DataService {
         let searchParams = new URLSearchParams();
         let commonParams = Object.assign({}, this.createDefaultParams(), params);
         for(let key in commonParams){
-            searchParams.append(key, commonParams[key]);
+            if (commonParams.hasOwnProperty(key)){
+                searchParams.append(key, commonParams[key]);
+            }
         }
+
         return this.http.get(url, { search: searchParams })
             .map(response => {
                 return response.json();
@@ -37,5 +43,10 @@ export class DataService {
 
     getCharacters(params) {
         return this.get('http://gateway.marvel.com:80/v1/public/characters', params);
+
+    }
+
+    getComics(params){
+        return this.get('http://gateway.marvel.com:80/v1/public/comics', params);
     }
 }
