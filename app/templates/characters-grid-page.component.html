@@ -3,6 +3,7 @@
         <div class="container">
             <mw-charactersg [grid]="grid" *ngFor="let grid of grids"></mw-charactersg>
         </div>
+        <mw-back-to-top></mw-back-to-top>
     </div>
     <mw-loader *ngIf="requestPending"></mw-loader>
 </section>

@@ -9,6 +9,7 @@ import { CGPComponent } from './js/components/characters-grid-page.component';
 import { CGComponent } from './js/components/characters-grid.component';
 import { ComicsGPComponent } from './js/components/comics-grid-page.component';
 import { ComicsGComponent } from './js/components/comics-grid.component';
+import { BackToTopComponent } from './js/components/back-to-top.component';
 import { DataService } from './js/services/data.service';
 
 
@@ -24,7 +25,8 @@ import { DataService } from './js/services/data.service';
         CGPComponent,
         CGComponent,
         ComicsGPComponent,
-        ComicsGComponent
+        ComicsGComponent,
+        BackToTopComponent
     ],
     providers:[
         DataService

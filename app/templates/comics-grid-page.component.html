@@ -5,6 +5,7 @@
                 <h2 class="comics-grid-year">{{year}}</h2>
                 <mw-comicsg *ngFor="let grid of grids[year]" [grid]="grid"></mw-comicsg>
             </div>
+            <mw-back-to-top></mw-back-to-top>
         </div>
     </div>
     <mw-loader *ngIf="requestPending"></mw-loader>
