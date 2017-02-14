@@ -1,0 +1,5 @@
+<div class="years-container" [ngClass]="{'present': present}">
+    <div  *ngFor="let year of getRow()"  class="year-wrapper col-sm-2">
+        <span (click)="scrollTo(year)">{{year}}</span>
+    </div>
+</div>

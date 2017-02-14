@@ -1,7 +1,8 @@
 <section>
     <div *ngIf="isNonEmptyObject(grids)">
+        <mw-years-panel [years]="makeIterative(grids)"></mw-years-panel>
         <div class="container">
-            <div *ngFor="let year of makeIterative(grids)">
+            <div *ngFor="let year of makeIterative(grids)" id="{{year}}">
                 <h2 class="comics-grid-year">{{year}}</h2>
                 <mw-comicsg *ngFor="let grid of grids[year]" [grid]="grid"></mw-comicsg>
             </div>

@@ -1,0 +1,32 @@
+.years-container{
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    position: fixed;
+    top: -90px;
+    z-index: 3;
+    width: 100%;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.years-container.present{
+    top: 0;
+}
+
+.year-wrapper{
+    line-height: 1em;
+    position: relative;
+    font-family: "TradeGothicBold";
+    letter-spacing: -1px;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.year-wrapper span{
+    cursor: pointer;
+}

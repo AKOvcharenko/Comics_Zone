@@ -1,9 +1,16 @@
 <div class="comics-row row" *ngFor="let row of rows">
     <div class="col-sm-4" *ngFor="let item of row">
         <a [href]="getLinkHref(item)">
-            <img [src]="getImageSrc(item)">
-            <span class="comic-shadow"></span>
-            <span class="comic-border"></span>
+            <span class="comic-image-wrapper">
+                <img [src]="getImageSrc(item)">
+                <span class="comic-shadow"></span>
+                <span class="comic-border"></span>
+                <span class="comic-info">
+                    <span class="comic-description">{{item.description}}</span>
+                    <span *ngIf="getComicAuthors(item)" class="comic-authors">{{getComicAuthors(item)}}</span>
+                </span>
+            </span>
+            <span class="comic-title">{{getComicTitle(item)}}</span>
         </a>
     </div>
 </div>

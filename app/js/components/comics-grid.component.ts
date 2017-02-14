@@ -16,7 +16,7 @@ export class ComicsGComponent{
     splitGrid(){
         var rows  = [];
         var grid = this.grid.slice();
-        while (grid.length > 0){rows.push(grid.splice(0, 3));}
+        while (grid.length > 0){rows.push(grid.splice(0, 3));}        
         return rows;
     }
 
@@ -28,8 +28,12 @@ export class ComicsGComponent{
         return `${el.thumbnail.path}.${el.thumbnail.extension}`;
     }
 
-    getImageCopy(el){
-        return //el.name.replace(/\(/, '<br>(');
+    getComicTitle(el){
+        return el.title.replace(/\(.*\)/g, '');
+    }
+
+    getComicAuthors(el){
+        return el.creators.items.map(author => author.name).join(' | ');
     }
 
 

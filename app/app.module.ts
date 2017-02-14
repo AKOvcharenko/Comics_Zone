@@ -10,6 +10,7 @@ import { CGComponent } from './js/components/characters-grid.component';
 import { ComicsGPComponent } from './js/components/comics-grid-page.component';
 import { ComicsGComponent } from './js/components/comics-grid.component';
 import { BackToTopComponent } from './js/components/back-to-top.component';
+import { FixedYearPanelComponent } from './js/components/fixed-years-panel.component';
 import { DataService } from './js/services/data.service';
 
 
@@ -26,7 +27,8 @@ import { DataService } from './js/services/data.service';
         CGComponent,
         ComicsGPComponent,
         ComicsGComponent,
-        BackToTopComponent
+        BackToTopComponent,
+        FixedYearPanelComponent
     ],
     providers:[
         DataService
