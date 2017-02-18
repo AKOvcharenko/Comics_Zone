@@ -1,0 +1,5 @@
+<div class="lifelines-container">
+    <div class="lifeline-wrapper fa" *ngFor="let lifeline of getLifelines(lifelines)" [ngClass]="lifeline">
+        <span class="lifeline-number">{{lifelines[lifeline]}}</span>
+    </div>
+</div>

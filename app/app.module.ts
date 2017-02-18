@@ -9,6 +9,9 @@ import { CGPComponent } from './js/components/characters-grid-page.component';
 import { CGComponent } from './js/components/characters-grid.component';
 import { ComicsGPComponent } from './js/components/comics-grid-page.component';
 import { ComicsGComponent } from './js/components/comics-grid.component';
+import { GamePageComponent } from './js/components/game-page.component';
+import { LifePanelComponent } from './js/components/life-panel.component';
+import { LifelinesPanelComponent } from './js/components/lifelines-panel.component';
 import { BackToTopComponent } from './js/components/back-to-top.component';
 import { FixedYearPanelComponent } from './js/components/fixed-years-panel.component';
 import { DataService } from './js/services/data.service';
@@ -28,7 +31,10 @@ import { DataService } from './js/services/data.service';
         ComicsGPComponent,
         ComicsGComponent,
         BackToTopComponent,
-        FixedYearPanelComponent
+        FixedYearPanelComponent,
+        GamePageComponent,
+        LifePanelComponent,
+        LifelinesPanelComponent
     ],
     providers:[
         DataService

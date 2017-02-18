@@ -26,7 +26,7 @@ export class DataService {
         }
     }
 
-    private get(url, params){
+    private get(url, params={}){
         let searchParams = new URLSearchParams();
         let commonParams = Object.assign({}, this.createDefaultParams(), params);
         for(let key in commonParams){
@@ -43,10 +43,13 @@ export class DataService {
 
     getCharacters(params) {
         return this.get('http://gateway.marvel.com:80/v1/public/characters', params);
-
     }
 
     getComics(params){
         return this.get('http://gateway.marvel.com:80/v1/public/comics', params);
+    }
+
+    getRandomCharacter(){
+        return this.get('http://gateway.marvel.com:80/v1/public/sgdfg');
     }
 }

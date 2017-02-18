@@ -1,0 +1,99 @@
+.lifeline-wrapper {
+     width: 35px;
+     height: 35px;
+     display: inline-block;
+     background: #838383;
+     border-radius: 5px;
+     margin-right: 15px;
+     position: relative;
+     cursor: pointer;
+ }
+
+.lifeline-number {
+    position: absolute;
+    top: -12px;
+    font-size: 15px;
+    font-family: "TradeGothicBold",sans-serif !important;
+    color: #ddd;
+    background-color: #f0141e;
+    width: 24px;
+    line-height: 24px;
+    height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    right: -12px;
+    transition: all 0.15s ease-in-out;
+}
+
+.lifeline-wrapper:hover .lifeline-number{
+    color: #fff;
+}
+
+
+.lifeline-wrapper.skip:after,
+.lifeline-wrapper.get-letter:after,
+.lifeline-wrapper.get-all-letters:after{
+    content: 'A';
+    display: block;
+    position: absolute;
+    font-size: 20px;
+    font-family: "TradeGothicBold",sans-serif;
+    top: 7px;
+    left: 11px;
+    color: #ddd;
+    transition: all 0.15s ease-in-out;
+}
+
+.lifeline-wrapper.get-all-letters:after{
+    content: 'AZ';
+    left: 7px;
+}
+
+.lifeline-wrapper.skip:after{
+    content: '\f0a9';
+    font-family: FontAwesome;
+    left: 9px;
+}
+
+.lifeline-wrapper:hover:after{
+    color: #fff;
+}
+
+
+.lifeline-wrapper.skip:before,
+.lifeline-wrapper.get-letter:before,
+.lifeline-wrapper.get-all-letters:before{
+    content: 'Skip this character';
+    display: block;
+    position: absolute;
+    font-family: "TradeGothicBold",sans-serif;
+    left: -15px;
+    text-align: center;
+    color: #fff;
+    right: -15px;
+    padding: 5px;
+    font-size: 12px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    z-index: 5;
+    top: 38px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+
+}
+
+.lifeline-wrapper.get-letter:before{
+    content: "Get one letter of the character's name";
+}
+
+.lifeline-wrapper.get-all-letters:before{
+    content: "Get jumbled letters of the character's name";
+}
+
+.lifeline-wrapper.skip:hover:before,
+.lifeline-wrapper.get-letter:hover:before,
+.lifeline-wrapper.get-all-letters:hover:before{
+    visibility: visible;
+    opacity: 1;
+}
