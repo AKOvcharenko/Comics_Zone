@@ -12,6 +12,8 @@ import { ComicsGComponent } from './js/components/comics-grid.component';
 import { GamePageComponent } from './js/components/game-page.component';
 import { LifePanelComponent } from './js/components/life-panel.component';
 import { LifelinesPanelComponent } from './js/components/lifelines-panel.component';
+import { GameFieldComponent } from './js/components/game-field.conponent';
+import { GuessedCharacterComponent } from './js/components/guessed-character.component';
 import { BackToTopComponent } from './js/components/back-to-top.component';
 import { FixedYearPanelComponent } from './js/components/fixed-years-panel.component';
 import { DataService } from './js/services/data.service';
@@ -34,7 +36,9 @@ import { DataService } from './js/services/data.service';
         FixedYearPanelComponent,
         GamePageComponent,
         LifePanelComponent,
-        LifelinesPanelComponent
+        LifelinesPanelComponent,
+        GameFieldComponent,
+        GuessedCharacterComponent
     ],
     providers:[
         DataService

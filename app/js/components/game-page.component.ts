@@ -29,14 +29,27 @@ export class GamePageComponent {
     ){}
     
     getCharacter(){
-        this.dataService.getRandomCharacter().subscribe(data => {
-            
+        var rand = Math.floor(Math.random() * 20);
+        this.requestPending = true;
+        this.dataService.getCharacters({offset: rand * 34}).subscribe(data => {
+            while(/image_not_available/.test(data.data.results[rand].thumbnail.path)){
+                rand = Math.floor(Math.random() * 20);
+            }
+            this.requestPending = false;
+            return data.data.results[rand];
         });
+    }
+    
+    onFilled(){
+    }
+
+    asfd(){
+       return !this.requestPending && this.character;
     }
 
 
     ngOnInit(){
-        //this.getCharacter();
+        this.character = this.getCharacter();
     }
 
 }

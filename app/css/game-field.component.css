@@ -1,0 +1,25 @@
+:host{
+    display: block;
+    overflow: hidden;
+    margin-left: 100px;
+    margin-top: 40px;
+}
+
+span.letter{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    color: white;
+    margin-right: 10px;
+    border-bottom: 4px solid white;
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 35px;
+    overflow: hidden;
+}
+
+span.letter:focus{
+    outline: transparent;
+    background: rgba(0, 0, 0, 0.3);
+}

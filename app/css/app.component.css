@@ -2,7 +2,8 @@
     display: block;
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100%;
-    background: #fafafa;
+    /*background: #fafafa;*/
+    background: url(http://i.annihil.us/u/prod/marvel/i/mg/6/d0/54d248a59a9d4.jpg) #000;
 
 
 }

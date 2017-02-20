@@ -48,8 +48,4 @@ export class DataService {
     getComics(params){
         return this.get('http://gateway.marvel.com:80/v1/public/comics', params);
     }
-
-    getRandomCharacter(){
-        return this.get('http://gateway.marvel.com:80/v1/public/sgdfg');
-    }
 }
