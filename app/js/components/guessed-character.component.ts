@@ -10,5 +10,8 @@ import { Component, Input } from '@angular/core';
 export class GuessedCharacterComponent{
     @Input() character;
     
-    
+    getImageSrc(){
+        console.log(this.character);
+        return `${this.character.thumbnail.path}.${this.character.thumbnail.extension}`
+    }
 }

@@ -9,20 +9,10 @@ import { Component, Input, Output, EventEmitter} from '@angular/core';
 
 export class GameFieldComponent {
 
-    @Input() num;
+    @Input() character;
     @Output() filled = new EventEmitter();
-    
-    numAsArr:Array<number>;
 
-    getNumAsArr(number){
-        var i;
-        var res = [];
-        var num = parseInt(number);
-        for( i = 0; i < num; i += 1 ){
-            res.push(i);
-        }
-        return res;
-    }
+    name;
 
     goNext(el){
         var next = el.nextSibling;
@@ -40,6 +30,16 @@ export class GameFieldComponent {
         var lettersAsArr = [].slice.call(letters);
         return lettersAsArr.map(el => el.textContent).join('');
     }
+    
+    showCharIfSpecial(char){
+        if(/\.|\-/.test(char)){return char;}
+        if(/\s/.test(char)){return '<br>';}
+        return '';
+    }
+
+    getName(){
+        return this.character.name.replace(/\(.+\)/g, '');
+    }
 
     onKeyPress(event){
         var target = event.target;
@@ -52,7 +52,7 @@ export class GameFieldComponent {
     }
 
     ngOnInit(){
-        this.numAsArr = this.getNumAsArr(this.num);
+        this.name = this.getName().trim().split('');
     }
 
 

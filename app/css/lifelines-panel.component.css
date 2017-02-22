@@ -24,6 +24,10 @@
     right: -12px;
     transition: all 0.15s ease-in-out;
 }
+:host{
+    display: inline-block;
+    vertical-align: top;
+}
 
 .lifeline-wrapper:hover .lifeline-number{
     color: #fff;

@@ -1,9 +1,13 @@
-<div>
-    <mw-life-panel [lives]="lives"></mw-life-panel>
-    <mw-lifelines-panel [lifelines]="lifelines"></mw-lifelines-panel>
-    <div *ngIf="asfd()">
-        <mw-guessed-character  [character]="character"></mw-guessed-character>
-        <mw-game-field  (filled)="onFilled()" [num]="9"></mw-game-field>
+<div class="container">
+    <div class="row life-info-holder">
+        <mw-lifelines-panel (usedLifeline)="useLifeline($event)" [lifelines]="lifelines"></mw-lifelines-panel>
+        <mw-life-panel [lives]="lives"></mw-life-panel>
+        <span class="scores">{{getZeroedScores()}}</span>
+        <span (click)="getCharacter()">go next</span>
+    </div>
+    <div *ngIf="character && !requestPending" class="row">
+        <mw-guessed-character class="col-sm-4"  [character]="character"></mw-guessed-character>
+        <mw-game-field class="col-sm-8" (filled)="onFilled($event)" [character]="character"></mw-game-field>
     </div>
     <mw-loader *ngIf="requestPending"></mw-loader>
 </div>

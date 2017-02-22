@@ -1,0 +1,12 @@
+.life-info-holder{
+    text-align: right;
+    margin: 20px 0;
+}
+
+.scores{
+    color: white;
+    font-size: 34px;
+    vertical-align: text-top;
+    line-height: 36px;
+    margin-left: 60px;
+}

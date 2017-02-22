@@ -20,36 +20,57 @@ export class GamePageComponent {
         'get-letter': 15
     };
 
-    scores = 0;
+    lifeLinesAction = {
+        'skip': this.getCharacter,
+        'get-all-letters': this.showAllLetters,
+        'get-letter': this.showOneLetter
+    };
+
+    scores = 15;
 
     character;
 
     constructor(
         private dataService: DataService
     ){}
+
+    getZeroedScores(){
+        var string = this.scores.toString();
+        while(string.length < 6){
+            string = '0' + string;
+        }
+        return string;
+    }
     
     getCharacter(){
-        var rand = Math.floor(Math.random() * 20);
         this.requestPending = true;
-        this.dataService.getCharacters({offset: rand * 34}).subscribe(data => {
+        var rand = Math.floor(Math.random() * 20);
+        this.dataService.getCharacter().subscribe(data => {
+            console.log(data.data.results[rand])
             while(/image_not_available/.test(data.data.results[rand].thumbnail.path)){
                 rand = Math.floor(Math.random() * 20);
             }
             this.requestPending = false;
-            return data.data.results[rand];
+            this.character = data.data.results[rand];
         });
     }
-    
-    onFilled(){
+
+    useLifeline(type){
+        if(this.requestPending) return;
+        var currentValue = this.lifelines[type];
+        this.lifelines[type] = currentValue - 1;
+        this.lifeLinesAction[type].call(this);
     }
 
-    asfd(){
-       return !this.requestPending && this.character;
-    }
+    showAllLetters(){}
 
+    showOneLetter(){}
+
+    onFilled(event){
+    }
 
     ngOnInit(){
-        this.character = this.getCharacter();
+        this.getCharacter();
     }
 
 }

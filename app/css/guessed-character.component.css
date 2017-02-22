@@ -1,0 +1,21 @@
+:host{
+    display: inline-block;
+}
+
+.guessed-character-wrapper{
+    display: inline-block;
+    position: relative;
+}
+
+.guessed-shadow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.guessed-character-wrapper img{
+    width: 100%;
+    height:auto;
+    border-radius: 10px;
+}

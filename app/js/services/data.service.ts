@@ -48,4 +48,12 @@ export class DataService {
     getComics(params){
         return this.get('http://gateway.marvel.com:80/v1/public/comics', params);
     }
+    
+    getCharacter(){
+        var params = {
+            offset: this.getRandomInt(0, 50) * 20
+        };
+        return this.get('http://gateway.marvel.com:80/v1/public/characters', params);
+        
+    }
 }

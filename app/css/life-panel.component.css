@@ -1,7 +1,13 @@
+:host{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 60px;
+}
+
 .lives-container i{
     color: #f0141e;
-    font-size: 2em;
-    padding: 10px 3px;
+    font-size: 30px;
+    padding: 0px 3px;
     color: #838383;
     transition: all 0.3s;
 
@@ -9,5 +15,5 @@
 
 .lives-container i.active{
     color: #f0141e;
-    opacity: 1;
+    margin-top: 3px;
 }
