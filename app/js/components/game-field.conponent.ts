@@ -14,9 +14,11 @@ export class GameFieldComponent {
 
     name;
 
-    goNext(el){
+    goNext(el, func){
         var next = el.nextSibling;
-        next ? next.focus() : el.blur();
+        if(next && next.getAttribute('contenteditable') === 'true'){next.focus();}
+        else if(next && next.getAttribute('contenteditable') === 'false'){func(next, func);}
+        else{el.blur();}
     }
 
     isEverythingFilled(){
@@ -42,11 +44,12 @@ export class GameFieldComponent {
     }
 
     onKeyPress(event){
+        debugger;
         var target = event.target;
         var value = event.key;
         target.textContent = '';
         setTimeout(()=>{
-            this.goNext(target);
+            this.goNext(target, this.goNext);
             this.isEverythingFilled() && this.filled.emit(this.getAnswer());
         }, 0);
     }

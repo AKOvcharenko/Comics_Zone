@@ -1,3 +1,8 @@
+:host{
+    display: inline-block;
+    vertical-align: top;
+}
+
 .lifeline-wrapper {
      width: 35px;
      height: 35px;
@@ -8,6 +13,11 @@
      position: relative;
      cursor: pointer;
  }
+
+.lifeline-wrapper.not-active{
+    pointer-events: none;
+    opacity: 0.4;
+}
 
 .lifeline-number {
     position: absolute;
@@ -24,15 +34,10 @@
     right: -12px;
     transition: all 0.15s ease-in-out;
 }
-:host{
-    display: inline-block;
-    vertical-align: top;
-}
 
 .lifeline-wrapper:hover .lifeline-number{
     color: #fff;
 }
-
 
 .lifeline-wrapper.skip:after,
 .lifeline-wrapper.get-letter:after,
